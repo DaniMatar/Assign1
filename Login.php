@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="Styles.css">
@@ -14,11 +15,12 @@
 
 <header>
 
-    <form action="SignedOn.php" method="POST">
-        <input id="UserName" type="text" placeholder="UserName" name = "User Name">
-        <input id="Password" type="text" placeholder="Password" name = "Password">
+    <form action="CheckLogin.php" method="POST">
+        <input id="UserName" type="text" placeholder="UserName" name = "UserName">
+        <input id="Password" type="password" placeholder="Password" name = "Password">
         <input id="submit" type="submit" value="Login">
     </form>
+
 
 
 
@@ -31,12 +33,6 @@
 <img id = "BackG" src="Bg.jpg">
 
 </body >
-
-
-
-
-
-
 
 
 
