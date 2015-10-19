@@ -30,7 +30,7 @@
 
 <body >
 
-<img id = "BackG" src="Bg.jpg">
+
 
 </body >
 
