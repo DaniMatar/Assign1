@@ -8,7 +8,7 @@ checkIfLoggedIn();
 require_once("ConnectAss1.php");
 $conn = getDbConnection();
 
-
+$NSearch = $_POST['NSearch']
 
 ?>
 
@@ -28,9 +28,18 @@ $conn = getDbConnection();
 
 <head >
 
+
+
 </head>
 
 <header>
+
+
+    <form action="EmpSearch.php" method="POST">
+        <input id="Search" type="text" placeholder="Search" name = "Search" value="<?php echo $NSearch;?>">
+        <input id="submit" type="submit" value="<?php echo $NSearch;?>">
+    </form>
+
 
 
     <img id = "headerP" src="employee-icon.jpg">
@@ -135,6 +144,9 @@ die("Unable to Retrieve records: " . mysqli_error($conn));
 }
 ?>
 
+<div id="TS">
+
+    <div class ="heading">
 
 <table class="ResultTable1" border="1">
     <thead>
@@ -173,12 +185,15 @@ die("Unable to Retrieve records: " . mysqli_error($conn));
 
 
 </table>
+    </div>
 
+    <div class = "hscroll" >
 
+    <div id = "Scroll"><?php echo $paginationDisplay; ?></div>
+    <div style="margin-left:64px; margin-right:64px;"><?php print "$outputList"; ?></div>
 
-<div id = "Scroll" style="margin-left:58px; margin-right:58px; padding:6px; background-color:#FFF; border:#999 1px solid;"><?php echo $paginationDisplay; ?></div>
-<div style="margin-left:64px; margin-right:64px;"><?php print "$outputList"; ?></div>
-
+    </div>
+</div>
 
 
 
@@ -188,4 +203,22 @@ die("Unable to Retrieve records: " . mysqli_error($conn));
 
 
 </body>
+<footer>
+
+</footer>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

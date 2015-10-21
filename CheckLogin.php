@@ -67,7 +67,7 @@ mysqli_close($conn);
 if($count == 1) {
     $_SESSION['UserName'] = $UserName;
     $_SESSION['Password'] = $Password;
-    header("location:SignedOn.php");
+    header("location:LoggedIn.php");
 } else {
     echo "<h1>Employee Database Login Error</h1>";
     echo "Wrong Username and/or Password!";
