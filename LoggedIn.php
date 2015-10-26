@@ -72,12 +72,18 @@ $FQuery= mysqli_query($conn, $query);
 </head>
 
 <header>
-    <form id = "GOTO " action="SignedOn.php" method="POST">
-        <input id="submit" type="submit" value="Employees Page">
+    <form id = "GOTOAll " action="AllEmp.php" method="POST">
+        <input id="submit" type="submit" value="View All Employees">
+    </form>
+
+    <form id = "GOTOSearch " action="Pagination.php" method="POST">
+        <input id="submit" type="submit" value="Search For Employees">
     </form>
 
 
-
+    <form id = "GOTOAdd " action="AddEmp.php" method="POST">
+        <input id="submit" type="submit" value="Add Employee">
+    </form>
 
     <img id = "headerP" src="employee-icon.jpg">
 

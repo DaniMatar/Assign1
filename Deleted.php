@@ -1,3 +1,8 @@
+
+
+
+
+
 <?php
 
 require_once("ConnectAss1.php");
@@ -29,15 +34,10 @@ checkIfLoggedIn();
 
 <head >
 
-    <?php
-
-    $searchquery = $_POST['searchquery'];
-    ?>
-
 
     <form action="Pagination.php" method="POST">
-        <input id="Search" type="text" placeholder="Search" name = " searchquery" value="<?php echo $searchquery; ?>">
-        <input id="submit" type="Submit" value="Search">
+        <input id="Search" type="text" placeholder="Search" name = " searchquery" value="Search">
+        <input id="submit" type="Submit" value="Submit">
     </form>
 
 
@@ -57,8 +57,13 @@ checkIfLoggedIn();
 </header>
 
 <body>
+<?php
+$emp_no = $_POST['tempId'];
 
-
+$sql = "DELETE * FROM employees WHERE emp_no LIKE '%$emp_no%' ";
+echo "Record Deleted";
+mysqli_close($conn);
+?>
 
 </body>
 <footer>
