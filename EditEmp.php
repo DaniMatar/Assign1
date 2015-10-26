@@ -77,16 +77,16 @@ $sql2 = mysqli_query($conn, $sql22) ;
 
                     <input id="Gender" type="text" placeholder="Gender" value="<?php echo $row['gender'] ?>"  name = "Gender"><br>
 
+                    <input type='hidden' name='tempId' value="<?=$row['emp_no']?>"/>
+
                     <input id="submit" type="submit" value="Edit">
                 </form>
 
 
-                <form name=myform action = Deleted.php>
-                    <input type=button value="Delete" onsubmit="return Confirm()">
+                <form name=Dform method = "POST" action = Deleted.php>
+                    <input type= "submit"  value="Delete" >
 
                 </form>
-
-
 
 
 

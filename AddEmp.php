@@ -63,28 +63,34 @@ $date = date('Y-m-d');
 <?php
 $dat = $_POST['HireDate'];
 
-echo $dat;
+
 
 if (!empty($_POST['FirstName']) && !empty($_POST['LastName'])&& !empty($_POST['BirthDate'])&& !empty($_POST['HireDate'])&& !empty($_POST['Gender'])) {
 
-
-
-
-
-    $sql = "INSERT (first_name,last_name,gender,hire_date,birth_date) INTO employees VALUES ('";
-    $sql .= $_POST['FirstName'];
-    $sql .= "','";
-    $sql .= $_POST['LastName'];
-    $sql .= "','";
-    $sql .= $_POST['Gender'];
-    $sql .= "','";
-    $sql .= $_POST['HireDate'];
-    $sql .= "','";
-    $sql .= $_POST['BirthDate'];
-    $sql .= "');";
-
-
+    $sql = "SELECT emp_no FROM employees ORDER BY emp_no DESC LIMIT 0, 1";
     $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $id = $row['emp_no'] + 1;
+
+
+
+
+    $sql1 = "INSERT first_name,last_name,gender,hire_date,birth_date INTO employees VALUES ('";
+    $sql1 .= "', first_name = '";
+    $sql1 .= $_POST['FirstName'];
+    $sql1 .= "', last_name = '";
+    $sql1 .= $_POST['LastName'];
+    $sql1 .= "', gender = '";
+    $sql1 .= $_POST['Gender'];
+    $sql1 .= "', hire_date = '";
+    $sql1 .= $_POST['HireDate'];
+    $sql1 .= "', birth_date = '";
+    $sql1 .= $_POST['BirthDate'];
+    $sql1 .= "', emp_no = '";
+    $sql1 .= $_POST['id'];
+    $sql1 .= ";";
+
+    $result = mysqli_query($conn, $sql1);
     if (!$result) {
         die("Unable to insert Record: " . mysqli_error($conn));
 

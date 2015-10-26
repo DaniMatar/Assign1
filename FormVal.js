@@ -1,11 +1,6 @@
-function Confirm(){
-
-
-return confirm("Are you Sure you Want to Delete This Record?");
 
 
 
-}
 
 
 function checkForm()

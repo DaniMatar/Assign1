@@ -61,7 +61,17 @@ checkIfLoggedIn();
 $emp_no = $_POST['tempId'];
 
 $sql = "DELETE * FROM employees WHERE emp_no LIKE '%$emp_no%' ";
-echo "Record Deleted";
+
+$result = mysqli_query($conn, $sql);
+
+if ($result)
+{
+    echo "Record Deleted";
+}
+else{
+    echo "Unable to Delete:" . mysqli_connect_error();
+
+}
 mysqli_close($conn);
 ?>
 
